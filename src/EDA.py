@@ -8,23 +8,23 @@ df=pd.read_csv(DataPath)
 print(df.shape)
 print(df.head())
 
-# print(df['PlacementStatus'].value_counts())
-# sns.countplot(x="PlacementStatus",data=df)
-# plt.savefig("images/placement_count.png",dpi=300,bbox_inches='tight')
+print(df['PlacementStatus'].value_counts())
+sns.countplot(x="PlacementStatus",data=df)
+plt.savefig("images/placement_count.png",dpi=300,bbox_inches='tight')
 
 
 #categorical analysis
 
-# features=['ExtracurricularActivities','PlacementTraining']
-# colors=['skyblue','salmon']
-# fig,axes=plt.subplots(1,2 ,figsize=(14,10))
-# axes=axes.flatten()
-# for i,col in enumerate(features):
-#     sns.countplot(x=col,hue='PlacementStatus',data=df,ax=axes[i],color=colors[i])
-#     axes[i].set_title(f'{col} vs PlacementStatus')
-# plt.tight_layout()   
-# plt.savefig("images/categorical_analysis.png",dpi=300,bbox_inches='tight')
-# plt.show()
+features=['ExtracurricularActivities','PlacementTraining']
+colors=['skyblue','salmon']
+fig,axes=plt.subplots(1,2 ,figsize=(14,10))
+axes=axes.flatten()
+for i,col in enumerate(features):
+    sns.countplot(x=col,hue='PlacementStatus',data=df,ax=axes[i],color=colors[i])
+    axes[i].set_title(f'{col} vs PlacementStatus')
+plt.tight_layout()   
+plt.savefig("images/categorical_analysis.png",dpi=300,bbox_inches='tight')
+plt.show()
 
 #numerical analysis
 features_1=['CGPA','Internships','Projects','Workshops/Certifications']
