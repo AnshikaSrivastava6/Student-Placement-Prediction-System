@@ -1,0 +1,2 @@
+DataPath=r"C:\Users\anshi\OneDrive\Desktop\Student_Placement Prediction\dataset\placementdata.csv"
+Cleaned_DataPath=r"C:\Users\anshi\OneDrive\Desktop\Student_Placement Prediction\dataset\Cleaned_Dataset.csv"
