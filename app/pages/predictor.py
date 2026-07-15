@@ -49,10 +49,15 @@ if predict_button:
     "SSC_Marks": ssc_marks,
     "HSC_Marks": hsc_marks }
 
-    response=requests.post("http://127.0.0.1:8000/predict",json=payload,timeout=5)   
-    result=response.json()
-    
-    st.write(response.status_code)
+    try:
+        response = requests.post("https://student-placement-prediction-system-706g.onrender.com/predict",json=payload,timeout=30)
+
+        result = response.json()
+
+    except Exception as e:
+        st.error(f"API Error: {e}")
+        st.stop()
+
 
     prediction = result["Prediction"]
     placed_prob = result["Placed Probability (%)"]
