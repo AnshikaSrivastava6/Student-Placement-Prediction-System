@@ -112,24 +112,24 @@ plt.legend()
 plt.savefig("images/roc_auc_lr.png",dpi=300,bbox_inches='tight')
 print("image saved successfully")
 
-# from utils import save_result
-# save_result(
-#     "Logistic Regression Baseline",
-#     y_test,
-#     lr_y_pred
-# )
-# save_result(
-#     "Logistic Regression Tuned",
-#     y_test,
-#     lr_grid_pred
-# )
-# save_result(
-#     "Logistic Regression SelectKBest",
-#     y_test,
-#     lr_best_feature_pred
-# )
-# save_result(
-#     "Logistic Regression RFE",
-#     y_test,
-#     lr_rfe_predict
-# )
+from utils import save_result
+save_result(
+    "Logistic Regression Baseline",
+    y_test,
+    lr_y_pred
+)
+save_result(
+    "Logistic Regression Tuned",
+    y_test,
+    lr_grid_pred
+)
+save_result(
+    "Logistic Regression SelectKBest",
+    y_test,
+    lr_best_feature_pred
+)
+save_result(
+    "Logistic Regression RFE",
+    y_test,
+    lr_rfe_predict
+)
